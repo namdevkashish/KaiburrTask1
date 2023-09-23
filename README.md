@@ -3,8 +3,6 @@
 
 This Java application provides a REST API for searching, creating, and deleting "server" objects using Spring Boot and MongoDB.
 
-Check out the live demo: [Java REST API](https://kaiburrtask1.netlify.app/)
-
 ## Table of Contents
 - [Project Setup](#project-setup)
 - [Configuration](#configuration)
@@ -180,41 +178,36 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' http://localhost:8080/servers
 ```
 
-#### Retrieve All Servers
+![Postman - PUT Server](Screenshots/CreateServer.png)
+
+![MongoDB - Server Created](Screenshots/ServerInMongoDB.png)
+
+#### Get Server
 
 bash code
 ```
-curl http://localhost:8080/servers
-Retrieve a Server by ID
+curl http://localhost:8080/servers/getServer
+Get a Server
 ```
 
-bash code
-```
-curl http://localhost:8080/servers/{id}
-Update a Server by ID
-```
-
-bash code
-```
-curl -X PUT -H "Content-Type: application/json" -d '{
-    "name": "updated name",
-    "language": "updated language",
-    "framework": "updated framework"
-}' http://localhost:8080/servers/{id}
-```
-
-#### Delete a Server by ID
-
-bash code
-```
-curl -X DELETE http://localhost:8080/servers/{id}
-```
+![Postman - GET Server](Screenshots/GetServer.png)
 
 #### Find Servers by Name
 
 bash code
 ```
-curl http://localhost:8080/servers/search?name={name}
+curl http://localhost:8080/servers/getServer?name={name}
 ```
+
+![Postman - GET Server By Name](Screenshots/GetServerByName.png)
+
+#### Delete a Server by ID
+
+bash code
+```
+curl -X DELETE http://localhost:8080/servers/deleteServer{id}
+```
+
+![Postman - GET Server By Name](Screenshots/DeleteServer.png)
 
 Replace {id} and {name} with actual values when making requests.
